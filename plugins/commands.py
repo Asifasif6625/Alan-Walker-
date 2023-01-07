@@ -47,7 +47,7 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('More Helps', callback_data='help')
             ],[
-            InlineKeyboardButton("Bot Developer", callback_data='source')
+            InlineKeyboardButton("Bot Developer", url="https://t.me/malayalamvibead")
             ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
@@ -102,7 +102,7 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('More Helps', callback_data='help')
             ],[
-            InlineKeyboardButton("Bot Developer", callback_data='source')
+            InlineKeyboardButton("Bot Developer", url="https://t.me/malayalamvibead")
             ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
