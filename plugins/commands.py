@@ -22,7 +22,7 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[           
-            InlineKeyboardButton('⭕️ 𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️', url='https://t.me/tvseriezzz_update')
+            InlineKeyboardButton('⭕️ 𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️', url='https://t.me/mlavib')
             ],[
             InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿 ℹ️', url=f"https://t.me/{temp.U_NAME}?start=help")
             ]]
@@ -38,16 +38,14 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention, message.from_user.username, temp.U_NAME))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=true")
+            InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/movie_flix_bot?startgroup=true")
             ],[
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz_group"),
-            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/tvseriezzz_update')
+            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/malayalamvibe')
             ],[
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
-            InlineKeyboardButton("🔥 Dev 🔥", callback_data='source')
+            InlineKeyboardButton("Group\nFilm Factory", url="https://t.me/mv_requst_group"),
+            InlineKeyboardButton("Group\nMr Request gp", url="https://t.me/+dezh9OsvdKk1OTRl")
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('More Helps', callback_data='help')
             ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
@@ -56,7 +54,7 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAIFNGJSlfOErbkSeLt9SnOniU-58UUBAAKaAAPIlGQULGXh4VzvJWoeBA")
         await asyncio.sleep(1)
         await m.delete()
-        await message.reply_photo(
+        await message.reply_video(
             video=random.choice(PICS),
             caption=START_MESSAGE.format(user=message.from_user.mention, bot=temp.B_LINK),
             reply_markup=reply_markup,
@@ -93,16 +91,14 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=true")
+            InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/movie_flix_bot?startgroup=true")
             ],[
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz_group"),
-            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/tvseriezzz_update')
+            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/malayalamvibe')
             ],[
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
-            InlineKeyboardButton("🔥 Dev 🔥", callback_data='source')
+            InlineKeyboardButton("Group\nFilm Factory", url="https://t.me/mv_requst_group"),
+            InlineKeyboardButton("Group\nMr Request gp", url="https://t.me/+dezh9OsvdKk1OTRl")
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('More Helps', callback_data='help')
             ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
@@ -111,7 +107,7 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAxkBAAIFNGJSlfOErbkSeLt9SnOniU-58UUBAAKaAAPIlGQULGXh4VzvJWoeBA")
         await asyncio.sleep(1)
         await m.delete()
-        await message.reply_photo(
+        await message.reply_video(
             video=random.choice(PICS),
             caption=START_MESSAGE.format(user=message.from_user.mention, bot=temp.B_LINK),
             reply_markup=reply_markup,
