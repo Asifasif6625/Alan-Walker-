@@ -47,7 +47,8 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('More Helps', callback_data='help')
             ],[
-            InlineKeyboardButton('Bot\nDeveloper', callback_data='source'),
+            InlineKeyboardButton("Bot\nDeveloper", callback_data='source')
+            ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -101,7 +102,8 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('More Helps', callback_data='help')
             ],[
-            InlineKeyboardButton('Bot\nDeveloper', callback_data='source'),
+            InlineKeyboardButton("Bot\nDeveloper", callback_data='source')
+            ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
