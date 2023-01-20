@@ -108,7 +108,7 @@ def get_reply_markup(query):
         ],
         [
             InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('Close please', 
+            InlineKeyboardButton('Close please', callback_data='close_data')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
