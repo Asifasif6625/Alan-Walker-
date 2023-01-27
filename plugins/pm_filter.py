@@ -136,7 +136,20 @@ async def pm_next_page(bot, query):
         return
     
     btn = [[InlineKeyboardButton(text=f"◎{get_size(file.file_size)}◎{file.file_name}", callback_data=f'pmfile#{file.file_id}')] for file in files ]
-                
+   
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f' 🎬 {search} 🎬 ', 'qinfo')
+        ]
+    )
+    btn.insert(1, 
+         [
+             InlineKeyboardButton(f'📮 ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', 'minfo'),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', 'sinfo')
+         ]
+    ) 
+      
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -145,8 +158,7 @@ async def pm_next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton(f' 🎬 {search} 🎬 ', 'qinfo'),
-             InlineKeyboardButton("❡ｂａｃｋ", callback_data=f"pmnext_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton("❡ｂａｃｋ", callback_data=f"pmnext_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"⚜ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)} ⚜", callback_data="pages")]                                  
         )
     elif off_set is None:
@@ -216,6 +228,19 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+   
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f' 🎬 {search} 🎬 ', 'qinfo')
+        ]
+    )
+    btn.insert(1, 
+         [
+             InlineKeyboardButton(f'📮 ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', 'minfo'),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', 'sinfo')
+         ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -1311,7 +1336,19 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-
+   
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f' 🎬 {search} 🎬 ', 'qinfo')
+        ]
+    )
+    btn.insert(1, 
+         [
+             InlineKeyboardButton(f'📮 ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', 'minfo'),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', 'sinfo')
+         ]
+    )
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
