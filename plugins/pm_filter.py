@@ -139,8 +139,12 @@ async def pm_next_page(bot, query):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1'),
-            InlineKeyboardButton(f'⚠️I don't see \nthe file I want ⚠️', 'information1')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
+        ]
+    ) 
+    btn.insert(1, 
+        [
+            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
         ]
     )  
       
@@ -225,10 +229,14 @@ async def next_page(bot, query):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1'),
-            InlineKeyboardButton(f'⚠️I don't see \nthe file I want ⚠️', 'information1')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
         ]
     )
+    btn.insert(1, 
+        [
+            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
+        ]
+    ) 
 
     if 0 < offset <= 10:
         off_set = 0
@@ -1329,11 +1337,15 @@ async def auto_filter(client, msg, spoll=False):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1'),
-            InlineKeyboardButton(f'⚠️I don't see \nthe file I want ⚠️', 'information1')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
         ]
     )
-    
+    btn.insert(1, 
+        [
+            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
+        ]
+    ) 
+
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
