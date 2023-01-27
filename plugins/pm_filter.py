@@ -139,7 +139,7 @@ async def pm_next_page(bot, query):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'pages')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
         ]
     )  
       
@@ -224,7 +224,7 @@ async def next_page(bot, query):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'Pages')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
         ]
     )
 
@@ -843,6 +843,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await removebg_plain(client, query.message)
     elif query.data == "rmbgsticker":
         await removebg_sticker(client, query.message)
+    elif query.data == "information1":
+        await query.answer("ഇതിൽ ക്ലിക്ക് ചെയ്യാതെ താഴെ കാണുന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യി ബ്രോ.. 🤷🏻‍♂️", show_alert=True)
     elif query.data == "pages":
         await query.answer("🤨 Curiosity is a little more, isn't it? 😁", show_alert=True)
     elif query.data == "start":                        
@@ -1325,7 +1327,7 @@ async def auto_filter(client, msg, spoll=False):
    
     btn.insert(0, 
         [
-            InlineKeyboardButton(f' ℘ {search} ℘ ', 'pages')
+            InlineKeyboardButton(f' ℘ {search} ℘ ', 'information1')
         ]
     )
     
