@@ -144,7 +144,7 @@ async def pm_next_page(bot, query):
     ) 
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
         ]
     )  
       
@@ -234,7 +234,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
         ]
     ) 
 
@@ -1342,7 +1342,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
         ]
     ) 
 
