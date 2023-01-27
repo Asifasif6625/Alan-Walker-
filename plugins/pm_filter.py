@@ -144,7 +144,7 @@ async def pm_next_page(bot, query):
     ) 
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
         ]
     )  
       
@@ -234,7 +234,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
         ]
     ) 
 
@@ -1342,7 +1342,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️I don't see the file I want ⚠️', 'information1')
+            InlineKeyboardButton(f'⚠️ no see my file ⚠️', 'information')
         ]
     ) 
 
