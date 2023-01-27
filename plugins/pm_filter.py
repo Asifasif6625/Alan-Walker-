@@ -145,7 +145,8 @@ async def pm_next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("❡ｂａｃｋ", callback_data=f"pmnext_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton(f' 🎬 {search} 🎬 ', 'qinfo'),
+             InlineKeyboardButton("❡ｂａｃｋ", callback_data=f"pmnext_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"⚜ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)} ⚜", callback_data="pages")]                                  
         )
     elif off_set is None:
