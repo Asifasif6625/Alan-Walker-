@@ -1199,8 +1199,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton(🚸Go Back', callback_data='help'),
-            InlineKeyboardButton('♻️Refresh', callback_data='rfrsh')
+            InlineKeyboardButton('🚸Go Back', callback_data='help'),
+            InlineKeyboardButton('🧮Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -1218,8 +1218,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='help'),
-            InlineKeyboardButton('♻️ReFresh', callback_data='rfrsh')
+            InlineKeyboardButton('🚸Go Back', callback_data='help'),
+            InlineKeyboardButton('🧮Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -1299,6 +1299,7 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
+                await message.reply_text(f="not file exist")
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
