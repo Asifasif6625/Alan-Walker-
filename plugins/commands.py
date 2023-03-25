@@ -40,7 +40,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/movie_flix_bot?startgroup=true")
             ],[
-            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/malayalamvibe')
+            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/+sse5wRfFF3FmY2I9')
             ],[
             InlineKeyboardButton("Group\nFilm Factory", url="https://t.me/mv_requst_group"),
             InlineKeyboardButton("Group\nMr Request gp", url="https://t.me/+dezh9OsvdKk1OTRl")
@@ -95,7 +95,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/movie_flix_bot?startgroup=true")
             ],[
-            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/malayalamvibe')
+            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/+sse5wRfFF3FmY2I9')
             ],[
             InlineKeyboardButton("Group\nFilm Factory", url="https://t.me/mv_requst_group"),
             InlineKeyboardButton("Group\nMr Request gp", url="https://t.me/+dezh9OsvdKk1OTRl")
@@ -255,7 +255,7 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     buttons = [[
-            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/tvseriezzz_update')
+            InlineKeyboardButton('⭕️𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️', url='https://t.me/+sse5wRfFF3FmY2I9')
         ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
