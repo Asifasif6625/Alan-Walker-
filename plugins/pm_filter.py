@@ -853,6 +853,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await removebg_plain(client, query.message)
     elif query.data == "rmbgsticker":
         await removebg_sticker(client, query.message)
+    elif query.data == "tipss":
+        await query.answer("✯ 𝖢𝗁𝖾𝖼𝗄 𝖮𝖳𝖳 𝖱𝖾𝗅𝖾𝖺𝗌𝖾 ᴏʀ 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖳𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀\n\n✯ 𝖣𝗈𝗇𝗍 𝖴𝗌𝖾 𝖲𝗒𝗆𝖻𝗈𝗅𝗌 𝖶𝗁𝗂𝗅𝖾 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 (,:'?!* 𝖾𝗍𝖼..)\n\n✯ [𝖬𝗈𝗏𝗂𝖾 𝖭𝖺𝗆𝖾 ,𝖸𝖾𝖺𝗋 ,𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾] 𝖠𝗌𝗄 𝖳𝗁𝗂𝗌 𝖶𝖺𝗒",show_alert=True)
     elif query.data == "information1":
         await query.answer("ഇതിൽ ക്ലിക്ക് ചെയ്യാതെ താഴെ കാണുന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യി ബ്രോ.. 🤷🏻‍♂️", show_alert=True)
     elif query.data == "pages":
@@ -1299,9 +1301,6 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<b><i>{message.from_user.mention} അതേ നിങ്ങൾ അയച്ച സ്പെല്ലിങ് തെറ്റ് ആണ്. ഗൂഗിൾ നോക്കി ഒന്നും കൂടി മൂവി നെയിം അയക്കുക. നിങ്ങൾ ചോദിച്ച മൂവി OTT റിലീസ് ആയെങ്കിൽ ഞാൻ ഫയൽ തരും.\n🎀എന്നിട്ടും മൂവി കിട്ടുന്നില്ല എങ്കിൽ OTT, DVD ലും മൂവി റിലീസ് ആയികാണില്ല.</i>\n\n𝘠𝘦𝘴, 𝘵𝘩𝘦 𝘴𝘱𝘦𝘭𝘭𝘪𝘯𝘨 𝘺𝘰𝘶 𝘴𝘦𝘯𝘵 𝘪𝘴 𝘪𝘯𝘤𝘰𝘳𝘳𝘦𝘤𝘵. 𝘑𝘶𝘴𝘵 𝘴𝘦𝘢𝘳𝘤𝘩 𝘎𝘰𝘰𝘨𝘭𝘦 𝘢𝘯𝘥 𝘴𝘦𝘯𝘥 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘯𝘢𝘮𝘦. 𝘐𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘺𝘰𝘶 𝘢𝘴𝘬𝘦𝘥 𝘧𝘰𝘳 𝘪𝘴 𝘢𝘯 𝘖𝘛𝘛 𝘳𝘦𝘭𝘦𝘢𝘴𝘦, 𝘐 𝘸𝘪𝘭𝘭 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘵𝘩𝘦 𝘧𝘪𝘭𝘦.\n🎀𝘚𝘵𝘪𝘭𝘭 𝘪𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘵𝘩𝘦𝘯 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵 𝘣𝘦 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘰𝘯 𝘖𝘛𝘛 𝘢𝘯𝘥 𝘋𝘝𝘋.</b>")
-                await asyncio.sleep(10)
-                await z.delete()
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
@@ -1576,64 +1575,15 @@ async def pm_spoll_choker(msg):
     g_s = await search_gagala(query)
     g_s += await search_gagala(msg.text)
     gs_parsed = []
-    imdb = await get_poster(query=movie, id=True)
-    btn = [
-            [
-                InlineKeyboardButton(
-                    text=f"{imdb.get('title')}",
-                    url=imdb['url'],
-                )
-            ]
-        ]
-    message = quer_y.message.reply_to_message or quer_y.message
-    if imdb:
-        caption = IMDB_TEMPLATE.format(
-            query = imdb['title'],
-            title = imdb['title'],
-            votes = imdb['votes'],
-            aka = imdb["aka"],
-            seasons = imdb["seasons"],
-            box_office = imdb['box_office'],
-            localized_title = imdb['localized_title'],
-            kind = imdb['kind'],
-            imdb_id = imdb["imdb_id"],
-            cast = imdb["cast"],
-            runtime = imdb["runtime"],
-            countries = imdb["countries"],
-            certificates = imdb["certificates"],
-            languages = imdb["languages"],
-            director = imdb["director"],
-            writer = imdb["writer"],
-            producer = imdb["producer"],
-            composer = imdb["composer"],
-            cinematographer = imdb["cinematographer"],
-            music_team = imdb["music_team"],
-            distributors = imdb["distributors"],
-            release_date = imdb['release_date'],
-            year = imdb['year'],
-            genres = imdb['genres'],
-            poster = imdb['poster'],
-            plot = imdb['plot'],
-            rating = imdb['rating'],
-            url = imdb['url'],
-            **locals()
-        )
-    else:
-        caption = "No Results"
-    if imdb.get('poster'):
-        try:
-            await quer_y.message.reply_photo(photo=imdb['poster'], caption=caption, reply_markup=InlineKeyboardMarkup(btn))
-        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-            pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            await quer_y.message.reply_photo(photo=poster, caption=caption, reply_markup=InlineKeyboardMarkup(btn))
-        except Exception as e:
-            logger.exception(e)
-            await quer_y.message.reply(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
-        await quer_y.message.delete()
-    else:
-        await quer_y.message.edit(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
-        await quer_y.answer()
+    if not g_s:
+        btn = [[
+            InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='tipss')
+            ],[   
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
+        ]]        
+        z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<b><i>{message.from_user.mention} അതേ നിങ്ങൾ അയച്ച സ്പെല്ലിങ് തെറ്റ് ആണ്. ഗൂഗിൾ നോക്കി ഒന്നും കൂടി മൂവി നെയിം അയക്കുക. നിങ്ങൾ ചോദിച്ച മൂവി OTT റിലീസ് ആയെങ്കിൽ ഞാൻ ഫയൽ തരും.\n🎀എന്നിട്ടും മൂവി കിട്ടുന്നില്ല എങ്കിൽ OTT, DVD ലും മൂവി റിലീസ് ആയികാണില്ല.</i>\n\n𝘠𝘦𝘴, 𝘵𝘩𝘦 𝘴𝘱𝘦𝘭𝘭𝘪𝘯𝘨 𝘺𝘰𝘶 𝘴𝘦𝘯𝘵 𝘪𝘴 𝘪𝘯𝘤𝘰𝘳𝘳𝘦𝘤𝘵. 𝘑𝘶𝘴𝘵 𝘴𝘦𝘢𝘳𝘤𝘩 𝘎𝘰𝘰𝘨𝘭𝘦 𝘢𝘯𝘥 𝘴𝘦𝘯𝘥 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘯𝘢𝘮𝘦. 𝘐𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘺𝘰𝘶 𝘢𝘴𝘬𝘦𝘥 𝘧𝘰𝘳 𝘪𝘴 𝘢𝘯 𝘖𝘛𝘛 𝘳𝘦𝘭𝘦𝘢𝘴𝘦, 𝘐 𝘸𝘪𝘭𝘭 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘵𝘩𝘦 𝘧𝘪𝘭𝘦.\n🎀𝘚𝘵𝘪𝘭𝘭 𝘪𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘵𝘩𝘦𝘯 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵 𝘣𝘦 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘰𝘯 𝘖𝘛𝘛 𝘢𝘯𝘥 𝘋𝘝𝘋.</b>", reply_markup=InlineKeyboardMarkup(btn)))
+        await asyncio.sleep(10)
+        await z.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -1665,18 +1615,62 @@ async def pm_spoll_choker(msg):
             ],[   
             InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
         ]]        
-        k=await msg.reply("<b>𝖲ᴏʀʀʏ 𝖭ᴏ 𝖥ɪʟᴇ𝗌 𝖶ᴇʀᴇ 𝖥ᴏᴜɴᴅ.\n\n𝖢ʜᴇᴄᴋ 𝖸ᴏᴜʀ 𝖲ᴘᴇʟʟɪɴɢ ɪɴ 𝖦ᴏᴏɢʟᴇ ᴀɴᴅ 𝖳ʀʏ 𝖠ɢᴀɪɴ. ♻️\n\n𝖱ᴇᴀᴅ 𝖨ɴ𝗌ᴛʀᴜᴄᴛɪᴏɴ𝗌 ғᴏʀ ʙᴇᴛᴛᴇʀ 𝖱ᴇ𝗌ᴜʟᴛ𝗌 👇🏻</b>", reply_markup=InlineKeyboardMarkup(btn))    
-        await asyncio.sleep(20)
-        await k.delete()
-        await msg.delete()
+        z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<b><i>{message.from_user.mention} അതേ നിങ്ങൾ അയച്ച സ്പെല്ലിങ് തെറ്റ് ആണ്. ഗൂഗിൾ നോക്കി ഒന്നും കൂടി മൂവി നെയിം അയക്കുക. നിങ്ങൾ ചോദിച്ച മൂവി OTT റിലീസ് ആയെങ്കിൽ ഞാൻ ഫയൽ തരും.\n🎀എന്നിട്ടും മൂവി കിട്ടുന്നില്ല എങ്കിൽ OTT, DVD ലും മൂവി റിലീസ് ആയികാണില്ല.</i>\n\n𝘠𝘦𝘴, 𝘵𝘩𝘦 𝘴𝘱𝘦𝘭𝘭𝘪𝘯𝘨 𝘺𝘰𝘶 𝘴𝘦𝘯𝘵 𝘪𝘴 𝘪𝘯𝘤𝘰𝘳𝘳𝘦𝘤𝘵. 𝘑𝘶𝘴𝘵 𝘴𝘦𝘢𝘳𝘤𝘩 𝘎𝘰𝘰𝘨𝘭𝘦 𝘢𝘯𝘥 𝘴𝘦𝘯𝘥 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘯𝘢𝘮𝘦. 𝘐𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘺𝘰𝘶 𝘢𝘴𝘬𝘦𝘥 𝘧𝘰𝘳 𝘪𝘴 𝘢𝘯 𝘖𝘛𝘛 𝘳𝘦𝘭𝘦𝘢𝘴𝘦, 𝘐 𝘸𝘪𝘭𝘭 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘵𝘩𝘦 𝘧𝘪𝘭𝘦.\n🎀𝘚𝘵𝘪𝘭𝘭 𝘪𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘵𝘩𝘦𝘯 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵 𝘣𝘦 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘰𝘯 𝘖𝘛𝘛 𝘢𝘯𝘥 𝘋𝘝𝘋.</b>", reply_markup=InlineKeyboardMarkup(btn)))
+        await asyncio.sleep(10)
+        await z.delete()
+        
+    
+async def advantage_spell_chok(msg):
+    query = re.sub(
+        r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
+        "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
+    query = query.strip() + " movie"
+    g_s = await search_gagala(query)
+    g_s += await search_gagala(msg.text)
+    gs_parsed = []
+    if not g_s:
+        btn = [[
+            InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='tipss')
+            ],[   
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
+        ]]        
+        z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<b><i>{message.from_user.mention} അതേ നിങ്ങൾ അയച്ച സ്പെല്ലിങ് തെറ്റ് ആണ്. ഗൂഗിൾ നോക്കി ഒന്നും കൂടി മൂവി നെയിം അയക്കുക. നിങ്ങൾ ചോദിച്ച മൂവി OTT റിലീസ് ആയെങ്കിൽ ഞാൻ ഫയൽ തരും.\n🎀എന്നിട്ടും മൂവി കിട്ടുന്നില്ല എങ്കിൽ OTT, DVD ലും മൂവി റിലീസ് ആയികാണില്ല.</i>\n\n𝘠𝘦𝘴, 𝘵𝘩𝘦 𝘴𝘱𝘦𝘭𝘭𝘪𝘯𝘨 𝘺𝘰𝘶 𝘴𝘦𝘯𝘵 𝘪𝘴 𝘪𝘯𝘤𝘰𝘳𝘳𝘦𝘤𝘵. 𝘑𝘶𝘴𝘵 𝘴𝘦𝘢𝘳𝘤𝘩 𝘎𝘰𝘰𝘨𝘭𝘦 𝘢𝘯𝘥 𝘴𝘦𝘯𝘥 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘯𝘢𝘮𝘦. 𝘐𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘺𝘰𝘶 𝘢𝘴𝘬𝘦𝘥 𝘧𝘰𝘳 𝘪𝘴 𝘢𝘯 𝘖𝘛𝘛 𝘳𝘦𝘭𝘦𝘢𝘴𝘦, 𝘐 𝘸𝘪𝘭𝘭 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘵𝘩𝘦 𝘧𝘪𝘭𝘦.\n🎀𝘚𝘵𝘪𝘭𝘭 𝘪𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘵𝘩𝘦𝘯 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵 𝘣𝘦 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘰𝘯 𝘖𝘛𝘛 𝘢𝘯𝘥 𝘋𝘝𝘋.</b>", reply_markup=InlineKeyboardMarkup(btn)))
+        await asyncio.sleep(10)
+        await z.delete()
         return
-    PM_SPELL_CHECK[msg.id] = movielist
-    btn = [[InlineKeyboardButton(text=movie.strip(), callback_data=f"pmspolling#{user}#{k}")] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="✘ ᴍᴜꜱᴛ ᴄʟᴏꜱᴇ ✘", callback_data=f'pmspolling#{user}#close_spellcheck')])
-    k=await msg.reply("<b>✯ നിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലതും ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</b>\n\n<b>✯ ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?</b>\n\n<b>📯 ɴʙ:ᴄʟɪᴄᴋ ᴛʜᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴏɴʟʏ ᴅᴏɴᴛ ᴜꜱᴇ ʏᴇᴀʀ ʙᴜᴛᴛᴏɴ </b>", reply_markup=InlineKeyboardMarkup(btn), reply_to_message_id=msg.id)
-    await asyncio.sleep(60)
-    await k.delete()
-    await msg.delete()
+    regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
+    gs = list(filter(regex.match, g_s))
+    gs_parsed = [re.sub(
+        r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)',
+        '', i, flags=re.IGNORECASE) for i in gs]
+    if not gs_parsed:
+        reg = re.compile(r"watch(\s[a-zA-Z0-9_\s\-\(\)]*)*\|.*",
+                         re.IGNORECASE)  # match something like Watch Niram | Amazon Prime
+        for mv in g_s:
+            match = reg.match(mv)
+            if match:
+                gs_parsed.append(match.group(1))
+    user = msg.from_user.id if msg.from_user else 0
+    movielist = []
+    gs_parsed = list(dict.fromkeys(gs_parsed))  # removing duplicates https://stackoverflow.com/a/7961425
+    if len(gs_parsed) > 3:
+        gs_parsed = gs_parsed[:3]
+    if gs_parsed:
+        for mov in gs_parsed:
+            imdb_s = await get_poster(mov.strip(), bulk=True)  # searching each keyword in imdb
+            if imdb_s:
+                movielist += [movie.get('title') for movie in imdb_s]
+    movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
+    movielist = list(dict.fromkeys(movielist))  # removing duplicates
+    if not movielist:
+        btn = [[
+            InlineKeyboardButton('📕 ɪɴsᴛʀᴜᴄᴛɪᴏɴ 📕', callback_data='tipss')
+            ],[   
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
+        ]]        
+        z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<b><i>{message.from_user.mention} അതേ നിങ്ങൾ അയച്ച സ്പെല്ലിങ് തെറ്റ് ആണ്. ഗൂഗിൾ നോക്കി ഒന്നും കൂടി മൂവി നെയിം അയക്കുക. നിങ്ങൾ ചോദിച്ച മൂവി OTT റിലീസ് ആയെങ്കിൽ ഞാൻ ഫയൽ തരും.\n🎀എന്നിട്ടും മൂവി കിട്ടുന്നില്ല എങ്കിൽ OTT, DVD ലും മൂവി റിലീസ് ആയികാണില്ല.</i>\n\n𝘠𝘦𝘴, 𝘵𝘩𝘦 𝘴𝘱𝘦𝘭𝘭𝘪𝘯𝘨 𝘺𝘰𝘶 𝘴𝘦𝘯𝘵 𝘪𝘴 𝘪𝘯𝘤𝘰𝘳𝘳𝘦𝘤𝘵. 𝘑𝘶𝘴𝘵 𝘴𝘦𝘢𝘳𝘤𝘩 𝘎𝘰𝘰𝘨𝘭𝘦 𝘢𝘯𝘥 𝘴𝘦𝘯𝘥 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘯𝘢𝘮𝘦. 𝘐𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘺𝘰𝘶 𝘢𝘴𝘬𝘦𝘥 𝘧𝘰𝘳 𝘪𝘴 𝘢𝘯 𝘖𝘛𝘛 𝘳𝘦𝘭𝘦𝘢𝘴𝘦, 𝘐 𝘸𝘪𝘭𝘭 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘵𝘩𝘦 𝘧𝘪𝘭𝘦.\n🎀𝘚𝘵𝘪𝘭𝘭 𝘪𝘧 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦 𝘵𝘩𝘦𝘯 𝘵𝘩𝘦 𝘮𝘰𝘷𝘪𝘦 𝘸𝘪𝘭𝘭 𝘯𝘰𝘵 𝘣𝘦 𝘳𝘦𝘭𝘦𝘢𝘴𝘦𝘥 𝘰𝘯 𝘖𝘛𝘛 𝘢𝘯𝘥 𝘋𝘝𝘋.</b>", reply_markup=InlineKeyboardMarkup(btn)))
+        await asyncio.sleep(10)
+        await z.delete()
 
 
 async def global_filters(client, message, text=False):
