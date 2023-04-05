@@ -1301,6 +1301,10 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
+                buttons = [[ InlineKeyboardButton('🐿️Reason🐿️', callback_data='tipss'), InlineKeyboardButton('🪧Google🪧', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}' ]]
+                z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<i>{message.from_user.mention}🪛I don't have a file in the word you sent, sometimes the word you sent is wrong.If this movie is an OTT release please check the spelling and then send it.</i>\n\n<b>㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.</b>", reply_markup = InlineKeyboardMarkup(buttons))   
+                await asyncio.sleep(100)
+                await z.delete()
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
