@@ -1306,7 +1306,7 @@ async def auto_filter(client, msg, spoll=False):
                     ],[   
                     InlineKeyboardButton('🔍 Google 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
                 ]]
-                z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<i>{message.from_user.mention}🪛I don't have a file in the word you sent, sometimes the word you sent is wrong.If this movie is an OTT release please check the spelling and then send it.</i>\n㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.", reply_markup = InlineKeyboardMarkup(btn))   
+                z = await message.reply_photo(photo="https://telegra.ph/file/47f5d9b37b02539c387bc.jpg", caption=f"<i>{message.from_user.mention} ഈ പേരിൽ ഒരു ഫയൽ എന്റെൽ ഇല്ല. നിങ്ങൾ റിക്വസ്റ്റ് ചെയ്‌ത മൂവി OTT റിലീസ് ആയെങ്കിൽ, താഴെ കാണുന്ന Google ബട്ടൺ ക്ലിക്ക് ചെയ്തു ശരിയായ സ്പെല്ലിങ് അയക്കുക.</i>\n㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.", reply_markup = InlineKeyboardMarkup(btn))   
                 await asyncio.sleep(100)
                 await z.delete()
                 if settings["spell_check"]:
