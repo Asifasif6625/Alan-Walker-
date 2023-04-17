@@ -1301,7 +1301,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
         ]
     ) 
 
