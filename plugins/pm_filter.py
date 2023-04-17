@@ -144,7 +144,7 @@ async def pm_next_page(bot, query):
     ) 
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{file.file_id}")
         ]
     )  
       
@@ -208,7 +208,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"◎{get_size(file.file_size)}◎{file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}'
+                    text=f"◎{get_size(file.file_size)}◎{file.file_name}", callback_data=f'files#{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -217,11 +217,11 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}'
+                    text=f"{file.file_name}", callback_data=f'files#{pre}#{file.file_id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    callback_data=f'files#{nxreq}#{file.file_id}',
+                    callback_data=f'files#{pre}#{file.file_id}',
                 ),
             ]
             for file in files
@@ -234,7 +234,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
         ]
     ) 
 
