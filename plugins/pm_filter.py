@@ -567,10 +567,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
          ]]
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(text=f"file size {get_size(file.file_size)}", url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}", show_alert=True)
+                await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
-                await query.answer(text=f"file size {get_size(file.file_size)}", url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}", show_alert=True)               
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")               
                 return
             else:
                 await client.send_cached_media(
@@ -1307,7 +1307,7 @@ async def auto_filter(client, msg, spoll=False):
                     InlineKeyboardButton('🔍 Google 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
                 ]]
                 z = await message.reply_photo(photo="https://telegra.ph/file/47f5d9b37b02539c387bc.jpg", caption=f"<i>{message.from_user.mention} ഈ പേരിൽ ഒരു ഫയൽ എന്റെൽ ഇല്ല. നിങ്ങൾ റിക്വസ്റ്റ് ചെയ്‌ത മൂവി OTT റിലീസ് ആയെങ്കിൽ, താഴെ കാണുന്ന Google ബട്ടൺ ക്ലിക്ക് ചെയ്തു ശരിയായ സ്പെല്ലിങ് അയക്കുക.</i>\n㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.", reply_markup = InlineKeyboardMarkup(btn))   
-                await asyncio.sleep(100)
+                await asyncio.sleep(10)
                 await z.delete()
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
