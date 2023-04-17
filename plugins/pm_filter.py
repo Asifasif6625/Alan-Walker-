@@ -144,7 +144,7 @@ async def pm_next_page(bot, query):
     ) 
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
         ]
     )  
       
@@ -234,7 +234,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
         ]
     ) 
 
@@ -1301,7 +1301,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{nxreq}")
         ]
     ) 
 
