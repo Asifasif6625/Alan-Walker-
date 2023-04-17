@@ -1260,6 +1260,8 @@ async def auto_filter(client, msg, spoll=False):
                 z = await message.reply_photo(photo="https://telegra.ph/file/47f5d9b37b02539c387bc.jpg", caption=f"<i>{message.from_user.mention} ഈ പേരിൽ ഒരു ഫയൽ എന്റെൽ ഇല്ല. നിങ്ങൾ റിക്വസ്റ്റ് ചെയ്‌ത മൂവി OTT റിലീസ് ആയെങ്കിൽ, താഴെ കാണുന്ന Google ബട്ടൺ ക്ലിക്ക് ചെയ്തു ശരിയായ സ്പെല്ലിങ് അയക്കുക.</i>\n㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.", reply_markup = InlineKeyboardMarkup(btn))   
                 await asyncio.sleep(100)
                 await z.delete()
+                if settings["spell_check"]:
+                    return await advantage_spell_chok(msg)
                 else:
                     return
         else:
@@ -1396,7 +1398,8 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
                 ]]
                 z = await message.reply_photo(photo="https://telegra.ph/file/0c73b24b4f74162621f6b.jpg", caption=f"<i>{message.from_user.mention}🪛ഓഹ്, ഈ പേരിൽ എന്റെ പക്കൽ ഒരു ഫയൽ ഇല്ല, മൂവി റിലീസ് ആയെങ്കിൽ ഗൂഗിൾ നോക്കി ഒന്നുകൂടി അയക്കുക.</i>", reply_markup = InlineKeyboardMarkup(btn))   
                 await asyncio.sleep(100)
-                await z.delete()                             
+                await z.delete()    
+                return await pm_spoll_choker(msg)                       
         else:
             return 
     else:
