@@ -144,7 +144,7 @@ async def pm_next_page(bot, query):
     ) 
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
         ]
     )  
       
@@ -234,7 +234,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
         ]
     ) 
 
@@ -1302,12 +1302,11 @@ async def auto_filter(client, msg, spoll=False):
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 btn = [[
-                    InlineKeyboardButton('🐿️Instruction🐿️', callback_data='tipss')
-                    ],[   
+                    InlineKeyboardButton('🐿️Instruction🐿️', callback_data='tipss'),   
                     InlineKeyboardButton('🔍 Google 🔍', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
                 ]]
                 z = await message.reply_photo(photo="https://telegra.ph/file/47f5d9b37b02539c387bc.jpg", caption=f"<i>{message.from_user.mention} ഈ പേരിൽ ഒരു ഫയൽ എന്റെൽ ഇല്ല. നിങ്ങൾ റിക്വസ്റ്റ് ചെയ്‌ത മൂവി OTT റിലീസ് ആയെങ്കിൽ, താഴെ കാണുന്ന Google ബട്ടൺ ക്ലിക്ക് ചെയ്തു ശരിയായ സ്പെല്ലിങ് അയക്കുക.</i>\n㋛ Pleαѕe Reqυѕт Movιe Eɴɢlιѕн Lαɴɢυαɢe Oɴly.", reply_markup = InlineKeyboardMarkup(btn))   
-                await asyncio.sleep(10)
+                await asyncio.sleep(100)
                 await z.delete()
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
@@ -1352,7 +1351,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'⚠️ no see my file ⚠️', url="https://te.legra.ph/Not-see-my-file-01-27")
+            InlineKeyboardButton(f'❤️‍🔥GET ᗩᒪᒪ ᖴIᒪE❤️‍🔥', callback_data=f"send_all#{req}#{key}#{pre}")
         ]
     ) 
 
