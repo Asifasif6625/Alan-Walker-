@@ -567,12 +567,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
          ]]
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await message.reply_text("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
                 await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
+                Vc = await message.reply_text("𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../")
                 return
             elif settings['botpm']:
-                await message.reply_text("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                Cc = await message.reply_text("𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../")
                 return
             else:
                 await client.send_cached_media(
